@@ -5,20 +5,20 @@
 class ApiGenCli < Formula
   desc ""
   homepage "https://github.com/victormazeli/homebrew-tools"
-  version "0.1.7"
+  version "0.1.8"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/victormazeli/api-gen-cli/releases/download/v0.1.7/api-gen-cli_Darwin_x86_64.tar.gz"
-      sha256 "0dad258cbacd79db55bfc4203886ac1cbb1dcfee99d07eb587571a8282fedb09"
+      url "https://github.com/victormazeli/api-gen-cli/releases/download/v0.1.8/api-gen-cli_Darwin_x86_64.tar.gz"
+      sha256 "8ca5863fb5bc82178aa2f521510bca2808d6c0f5bf7601c08e98de7db01ad839"
 
       def install
         bin.install "api-gen-cli"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/victormazeli/api-gen-cli/releases/download/v0.1.7/api-gen-cli_Darwin_arm64.tar.gz"
-      sha256 "e05ff4d31adcd98ca4cee9221280707568b994acebd0951fb6d7fed00fcced15"
+      url "https://github.com/victormazeli/api-gen-cli/releases/download/v0.1.8/api-gen-cli_Darwin_arm64.tar.gz"
+      sha256 "13cb36d630be6e8a11ff6e8a32f967e7fe78e067e72c34401f2359b125ceccad"
 
       def install
         bin.install "api-gen-cli"
@@ -27,17 +27,17 @@ class ApiGenCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/victormazeli/api-gen-cli/releases/download/v0.1.7/api-gen-cli_Linux_x86_64.tar.gz"
-      sha256 "a35895cc87926007518ac6762b2e56b093c46b8f3e7efb907b758e644b8ed7ac"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/victormazeli/api-gen-cli/releases/download/v0.1.8/api-gen-cli_Linux_arm64.tar.gz"
+      sha256 "cc379f33058aa179179a9bef30ba284ddd508e5f4a84df66bf2a6f0062a344c7"
 
       def install
         bin.install "api-gen-cli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/victormazeli/api-gen-cli/releases/download/v0.1.7/api-gen-cli_Linux_arm64.tar.gz"
-      sha256 "cf19b71a2e0687e80870c3073044a036236b22d264113f1763226110b9aa9038"
+    if Hardware::CPU.intel?
+      url "https://github.com/victormazeli/api-gen-cli/releases/download/v0.1.8/api-gen-cli_Linux_x86_64.tar.gz"
+      sha256 "31398dac1388f8ba22d119cfdd2191c2542457f4a75f1a26ac804c38816e57c7"
 
       def install
         bin.install "api-gen-cli"
